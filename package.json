@@ -2,9 +2,10 @@
   "name": "simple-api-server",
   "version": "1.0.0",
   "description": "Simple api server to copy",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "npm run test"
+    "test": "npm run test",
+    "serve": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -17,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/dwikasm/simple-api-server/issues"
   },
-  "homepage": "https://github.com/dwikasm/simple-api-server#readme"
+  "homepage": "https://github.com/dwikasm/simple-api-server#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
