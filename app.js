@@ -29,15 +29,24 @@ app.get("/names", (req, res, next) => {
     res.json(["Dwika", "Dwiki", "Egi"]);
 });
 
-let users = {
-    1: { id: '1', name: 'Dwika', userId: '1'},
-    2: { id: '2', name: 'Dwiki', userId: '2'}    
-};
+let users = [
+    { id: '1', name: 'Dwika', userId: '1', gender: 'male'},
+    { id: '2', name: 'Dwiki', userId: '2', gender: 'male'},
+    { id: '3', name: 'Sasa', userId: '3', gender: 'female'},
+];
 
 app.get('/users', (req, res) => {
-    return res.send(Object.values(users));
+    // with query example
+    let genderFilter = req.query.gender;
+    let output = [...users];
+
+    if (genderFilter != undefined){
+        output = output.filter(item => item.gender == genderFilter)
+    }
+    
+    return res.send(output);
 });
 
 app.get('/users/:userId', (req, res) => {
-    return res.send(users[req.params.userId]);
+    return res.send(users.find(item => item.userId == req.params.userId));
 });
