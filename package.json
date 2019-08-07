@@ -1,0 +1,21 @@
+{
+  "name": "simple-api-server",
+  "version": "1.0.0",
+  "description": "Simple api server to copy",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dwikasm/simple-api-server.git"
+  },
+  "keywords": [
+    "api"
+  ],
+  "author": "Dwika Setya",
+  "bugs": {
+    "url": "https://github.com/dwikasm/simple-api-server/issues"
+  },
+  "homepage": "https://github.com/dwikasm/simple-api-server#readme"
+}
