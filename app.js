@@ -36,12 +36,11 @@ let users = [
 ];
 
 app.get('/users', (req, res) => {
-    // with query example
-    let genderFilter = req.query.gender;
+    // with query example (string only)
     let output = [...users];
 
-    if (genderFilter != undefined){
-        output = output.filter(item => item.gender == genderFilter)
+    for (key in req.query) {
+        output = output.filter(item => item[key] == req.query[key])
     }
     
     return res.send(output);
